@@ -95,3 +95,11 @@ def addPhoto(request):
 
     context = {'categories': categories}
     return render(request, 'photos/add.html', context)
+
+
+@login_required(login_url='login')
+def deletePhoto(request, pk):
+    photo = Photo.objects.get(id=pk)
+    if photo:
+        photo.delete()
+    return redirect('gallery')

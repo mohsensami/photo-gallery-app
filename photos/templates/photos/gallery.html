@@ -1,5 +1,7 @@
 {% extends './base.html' %}
 
+{% load thumbnail %}
+
 {% block style %}
 <style>
     .image-thumbail {
@@ -50,7 +52,12 @@
                     {% for photo in photos %}
                     <div class="col-md-4">
                         <div class="card my-2">
-                            <img class="image-thumbail" src="{{photo.image.url}}" alt="Card image cap">
+                            
+
+                            {% thumbnail photo.image "300x200" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                                <!-- <img class="image-thumbail" src="{{photo.image.url}}" alt="Card image cap"> -->
+                            {% endthumbnail %}
 
                             <div class="card-body">
                                 <small>Category: {{photo.category.name}}</small>

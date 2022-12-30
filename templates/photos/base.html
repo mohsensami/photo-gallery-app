@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/imagelightbox.css' %}">
+    <title>Photo Gallery</title>
+
+    <!-- CSS only -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    {% block style %}{% endblock style %}
+
+</head>
+
+<body class="m-5">
+    {% block content %}{% endblock content %}
+</body>
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/imagelightbox.js' %}"></script>
+
+<script>
+$('a[data-imagelightbox="demo"]').imageLightbox({
+selector:       'a[data-imagelightbox]',
+id:             'imagelightbox',
+allowedTypes:   'png|jpg|jpeg|gif',
+animationSpeed: 250,
+activity:       false,
+arrows:         true,
+button:         true,
+caption:        true,
+enableKeyboard: true,
+lockBody:       false,
+navigation:     true,
+overlay:        true,
+preloadNext:    true,
+quitOnEnd:      false,
+quitOnImgClick: false,
+quitOnDocClick: true,
+quitOnEscKey:   true
+});
+</script>
+
+</html>

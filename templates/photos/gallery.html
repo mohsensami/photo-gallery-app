@@ -4,11 +4,6 @@
 
 {% block style %}
 <style>
-    .image-thumbail {
-        height: 200px;
-        object-fit: cover;
-    }
-
     .list-group-item a {
         text-decoration: none;
         color: black;
@@ -55,15 +50,16 @@
                             
 
                             {% thumbnail photo.image "300x200" crop="center" as im %}
+                            <a data-imagelightbox="demo" href="{{ photo.image.url }}">
                                 <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
+                            </a>    
                                 <!-- <img class="image-thumbail" src="{{photo.image.url}}" alt="Card image cap"> -->
                             {% endthumbnail %}
 
                             <div class="card-body">
                                 <small>Category: {{photo.category.name}}</small>
+                                <a href="{% url 'delete' photo.id %}" onclick="return confirm('Are you sure you want to delete this category?')"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a>
                             </div>
-                            <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                            <a onclick="return confirm('Are you sure Delete?')" href="{% url 'delete' photo.id %}" class="btn btn-outline-danger btn-sm m-1">Delete</a>
                         </div>
                     </div>
                     {% empty %}

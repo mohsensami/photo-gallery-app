@@ -33,13 +33,13 @@ open this link on your browser `http://127.0.0.1:8000/`
 <p align="center">
   Gallery Page
 </p>
-<img src="https://github.com/mohsensami/photo-gallery-app/blob/main/screenshot/screenshot1.png?raw=true">
+<img src="https://github.com/mohsensami/photo-gallery-app/blob/main/screenshot/Screenshot1.png?raw=true">
 </td> 
 <td width="50%">
 <br>
 <p align="center">
   LightBox
 </p>
-<img src="https://github.com/mohsensami/photo-gallery-app/blob/main/screenshot/screenshot2.png?raw=true">  
+<img src="https://github.com/mohsensami/photo-gallery-app/blob/main/screenshot/Screenshot2.png?raw=true">  
 </td>
 </table>

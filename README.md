@@ -1,4 +1,4 @@
-# Django Qr Generator
+# Photo Gallery
 
 * This is a photo gallery app 
 
